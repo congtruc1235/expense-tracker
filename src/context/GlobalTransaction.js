@@ -2,9 +2,8 @@ import React, { createContext, useEffect, useReducer } from 'react';
 import AppReducer from './AppReducer';
 
 // Initial state
-
 const initialState = {
-  transactions: localStorage.getItem('transaction') ? localStorage.getItem('transaction') : []
+  transactions: JSON.parse(localStorage.getItem('transactions')) ? JSON.parse(localStorage.getItem('transactions')) : []
 }
 
 // Create context
@@ -30,7 +29,7 @@ export const GlobalProvider = ({ children }) => {
   }
   useEffect(() => {
     localStorage.setItem('transactions', JSON.stringify(state.transactions));
-  },localStorage.getItem('transaction') )
+  })
   
   return (<GlobalContext.Provider value={{
     transactions: state.transactions,
