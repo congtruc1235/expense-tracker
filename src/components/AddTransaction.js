@@ -22,7 +22,6 @@ export const AddTransaction = () => {
         };
         addTransaction(newTransaction);
         window.localStorage.setItem('transactions', JSON.stringify(transactions));
-        // localStorage.setItem('transactions', transactions)
     }
 
 
@@ -31,13 +30,12 @@ export const AddTransaction = () => {
             <h3>Add new transaction</h3>
             <form >
                 <div className="form-control">
-                    <label htmlFor="text">Text</label>
+                    <label htmlFor="text">Description</label>
                     <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
                 </div>
                 <div className="form-control">
                     <label htmlFor="amount"
-                    >Amount <br />
-              (negative - expense, positive - income)</label>
+                    >Amount <br /></label>
                     <input type="number" min="0" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
                 </div>
                 <div className="btn-container">
